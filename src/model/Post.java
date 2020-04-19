@@ -8,14 +8,16 @@ public class Post {
     private String category;
     private String createdDate;
     Date date = new Date();
+    private String user;
 
 
-    public Post(String title, String text, String category, String createdDate, Date date) {
+    public Post(String title, String text, String category, String createdDate, Date date, String user) {
         this.title = title;
         this.text = text;
         this.category = category;
         this.createdDate = createdDate;
         this.date = date;
+        this.user = user;
     }
 
     public Post() {
@@ -62,6 +64,14 @@ public class Post {
         this.date = date;
     }
 
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -73,7 +83,8 @@ public class Post {
         if (text != null ? !text.equals(post.text) : post.text != null) return false;
         if (category != null ? !category.equals(post.category) : post.category != null) return false;
         if (createdDate != null ? !createdDate.equals(post.createdDate) : post.createdDate != null) return false;
-        return date != null ? date.equals(post.date) : post.date == null;
+        if (date != null ? !date.equals(post.date) : post.date != null) return false;
+        return user != null ? user.equals(post.user) : post.user == null;
     }
 
     @Override
@@ -83,6 +94,7 @@ public class Post {
         result = 31 * result + (category != null ? category.hashCode() : 0);
         result = 31 * result + (createdDate != null ? createdDate.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (user != null ? user.hashCode() : 0);
         return result;
     }
 
@@ -94,6 +106,7 @@ public class Post {
                 ", category='" + category + '\'' +
                 ", createdDate='" + createdDate + '\'' +
                 ", date=" + date +
+                ", user=" + user +
                 '}';
     }
 }

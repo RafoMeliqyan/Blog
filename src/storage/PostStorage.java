@@ -1,7 +1,8 @@
 package storage;
 
-import model.Post;
 import exception.PostNotFoundException;
+import model.Post;
+
 public class PostStorage {
 
     private int size = 0;
@@ -20,13 +21,12 @@ public class PostStorage {
         posts = tmp;
     }
 
-    public Post getPostByTitle(String title) throws PostNotFoundException{
+    public Post getPostByTitle(String title) throws PostNotFoundException {
         for (int i = 0; i < size; i++) {
             if (title.equals(posts[i].getTitle())) {
                 return posts[i];
             } else {
                 throw new PostNotFoundException("No post with title " + title);
-//                System.out.println("No post with title " + title);
             }
         }
         return null;
