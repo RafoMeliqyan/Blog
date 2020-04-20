@@ -119,6 +119,9 @@ public class PostMain implements Commands {
     }
 
     private static void searchPost() {
+        if (postStorage.isEmpty()) {
+            System.out.println("Please add post!!!");
+        }
         System.out.println("Import option for search");
         String option = scanner.nextLine();
         try {
@@ -130,6 +133,8 @@ public class PostMain implements Commands {
                 System.out.println("Import keyword for search");
                 String keyName = scanner.nextLine();
                 postStorage.getPostsByKeyword(keyName);
+            } else {
+                System.out.println("No option with " + option);
             }
         } catch (PostNotFoundException e) {
             System.out.println("No post with this title");

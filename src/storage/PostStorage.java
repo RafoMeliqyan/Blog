@@ -57,6 +57,8 @@ public class PostStorage {
         for (int i = 0; i < size; i++) {
             if (posts[i].getCategory().equals(category)) {
                 System.out.println(posts[i]);
+            } else {
+                System.out.println("No post with category " + category);
             }
         }
     }
