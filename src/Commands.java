@@ -1,4 +1,4 @@
-public interface PostStorageImpl {
+public interface Commands {
 
     int ADD_POST = 1;
     int SEARCH_POST = 2;

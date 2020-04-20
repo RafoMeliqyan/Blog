@@ -7,7 +7,7 @@ import storage.UserStorage;
 
 import java.util.Scanner;
 
-public class PostMain implements PostStorageImpl {
+public class PostMain implements Commands {
     public static PostStorage postStorage = new PostStorage();
     static Scanner scanner = new Scanner(System.in);
     public static UserStorage userStorage = new UserStorage();
@@ -15,7 +15,7 @@ public class PostMain implements PostStorageImpl {
     public static void main(String[] args) {
         boolean isRun = true;
         while (isRun) {
-            PostStorageImpl.printMainCommands();
+            Commands.printMainCommands();
             int command;
             try {
                 command = Integer.parseInt(scanner.nextLine());
@@ -78,7 +78,7 @@ public class PostMain implements PostStorageImpl {
         System.out.println("Welcome!!!");
         boolean isRun = true;
         while (isRun) {
-            PostStorageImpl.printUserCommands();
+            Commands.printUserCommands();
             int command;
             try {
                 command = Integer.parseInt(scanner.nextLine());
