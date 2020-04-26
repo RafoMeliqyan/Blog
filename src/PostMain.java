@@ -8,9 +8,9 @@ import storage.UserStorage;
 import java.util.Scanner;
 
 public class PostMain implements Commands {
-    public static PostStorage postStorage = new PostStorage();
+    public static PostStorage<Post> postStorage = new PostStorage<>();
     static Scanner scanner = new Scanner(System.in);
-    public static UserStorage userStorage = new UserStorage();
+    public static UserStorage<User> userStorage = new UserStorage<>();
 
     public static void main(String[] args) {
         boolean isRun = true;
